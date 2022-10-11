@@ -17,18 +17,18 @@ const SongCard = ({ song, i }) => {
 
 
       {/* Title and Subtitle section */}
-      <div>
+      <div className="mt-4 flex flex-col">
         {/* Title section */}
-        <p>
-          <Link>
-
+        <p className="font-semibold text-lg text-white truncate">
+          <Link to={`/songs/${song?.key}`}>
+            {song.title}
           </Link>
         </p>
 
         {/* Subtitle section */}
-        <p>
-          <Link>
-
+        <p className="text-sm truncate text-gray-300 mt-1">
+          <Link to={song.artists ? `/artists/${song.artists[0]?.adamid}` : '/top-artists'}>
+            {song.subtitle}
           </Link>
         </p>
       </div>
